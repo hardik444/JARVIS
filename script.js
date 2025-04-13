@@ -19,7 +19,7 @@ function appendMessage(message, sender) {
 
 function simulateJarvisResponse(userMessage) {
     // Mockup response logic
-    let jarvisMessage = "I’m not sure how to respond to that!";
+    let jarvisMessage = "Hey my name is JARVIS built HARDIK to have a conversation with me press the bottom right chat option";
     
     if (userMessage.toLowerCase().includes("hello")) {
         jarvisMessage = "Hello! How can I assist you today?";
