@@ -5,7 +5,7 @@ body {
 
 .chat-container {
     width: 400px;
-    margin: 50px auto;
+    margin: 20px auto; /* Slightly reduced margin */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -56,4 +56,14 @@ button {
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+}
+
+.embedded-chatbot {
+    width: 400px;
+    margin: 20px auto; /* Ensure spacing from the chat container */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the title */
 }
