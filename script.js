@@ -2,6 +2,14 @@ const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
+const dataset = [
+    { "question": "What is your name?", "answer": "I am Jarvis, your personal chatbot!" },
+    { "question": "How can you help me?", "answer": "I can assist you with various queries and provide information." },
+    { "question": "What are your capabilities?", "answer": "I can answer questions, provide suggestions, and much more!" },
+    { "question": "What is the weather like?", "answer": "I currently do not have access to real-time data." },
+    { "question": "Tell me a joke", "answer": "Why did the scarecrow win an award? Because he was outstanding in his field!" }
+];
+
 sendButton.onclick = function() {
     const userMessage = userInput.value;
     appendMessage(userMessage, 'user');
@@ -17,14 +25,16 @@ function appendMessage(message, sender) {
     chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll to the latest message
 }
 
-function simulateJarvisResponse(userMessage) {
-    // Mockup response logic
-    let jarvisMessage = "Hey my name is JARVIS built HARDIK to have a conversation with me press the bottom right chat option";
-    
-    if (userMessage.toLowerCase().includes("hello")) {
-        jarvisMessage = "Hello! How can I assist you today?";
-    } else if (userMessage.toLowerCase().includes("how are you")) {
-        jarvisMessage = "I'm just a program, but I'm here to help you!";
+function respondWithDataset(userMessage) {
+    const lowerCaseMessage = userMessage.toLowerCase();
+    let jarvisMessage = "I'm sorry, I don't have an answer for that.";
+
+    // Search for the user's question in the dataset
+    for (const item of dataset) {
+        if (lowerCaseMessage.includes(item.question.toLowerCase())) {
+            jarvisMessage = item.answer;
+            break;
+        }
     }
     
     setTimeout(() => {
