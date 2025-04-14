@@ -2,17 +2,6 @@ const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
-const dataset = [
-    { "question": "Hi", "answer": "Hi I am Jarvis, your personal chatbot! how may i help you?" },
-    { "question": "Hello", "answer": "Hey I am Jarvis, your personal chatbot! how may i help you?" },
-    { "question": "Namaste", "answer": "Namaste I am Jarvis, your personal chatbot! how may i help you?" },
-    { "question": "What is your name?", "answer": "I am Jarvis, your personal chatbot!" },
-    { "question": "How can you help me?", "answer": "I can assist you with various queries and provide information." },
-    { "question": "What are your capabilities?", "answer": "I can answer questions, provide suggestions, and much more!" },
-    { "question": "What is the weather like?", "answer": "I currently do not have access to real-time data." },
-    { "question": "Tell me a joke", "answer": "Why did the scarecrow win an award? Because he was outstanding in his field!" }
-];
-
 sendButton.onclick = function() {
     const userMessage = userInput.value;
     appendMessage(userMessage, 'user');
@@ -28,18 +17,16 @@ function appendMessage(message, sender) {
     chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll to the latest message
 }
 
-function respondWithDataset(userMessage) {
-    const lowerCaseMessage = userMessage.toLowerCase();
-    let jarvisMessage = "I'm sorry, I don't have an answer for that.";
-
-    // Search for the user's question in the dataset
-    for (const item of dataset) {
-        if (lowerCaseMessage.includes(item.question.toLowerCase())) {
-            jarvisMessage = item.answer;
-            break;
-        }
-    }
+function simulateJarvisResponse(userMessage) {
+    // Mockup response logic
+    let jarvisMessage = "I’m not sure how to respond to that!";
     
+    if (userMessage.toLowerCase().includes("hello")) {
+        jarvisMessage = "Hey this is Jarvis managed by hardik";
+    } else if (userMessage.toLowerCase().includes("how are you")) {
+        jarvisMessage = "I'm just a program, but I'm here to help you!";
+    }
+
     setTimeout(() => {
         appendMessage(jarvisMessage, 'jarvis');
     }, 1000); // Simulates delay for response
