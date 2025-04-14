@@ -3,6 +3,9 @@ const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
 const dataset = [
+    { "question": "Hi", "answer": "Hi I am Jarvis, your personal chatbot! how may i help you?" },
+    { "question": "Hello", "answer": "Hey I am Jarvis, your personal chatbot! how may i help you?" },
+    { "question": "Namaste", "answer": "Namaste I am Jarvis, your personal chatbot! how may i help you?" },
     { "question": "What is your name?", "answer": "I am Jarvis, your personal chatbot!" },
     { "question": "How can you help me?", "answer": "I can assist you with various queries and provide information." },
     { "question": "What are your capabilities?", "answer": "I can answer questions, provide suggestions, and much more!" },
